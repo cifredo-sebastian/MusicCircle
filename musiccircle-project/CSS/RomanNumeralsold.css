@@ -1,0 +1,21 @@
+.div-diatonic{
+    margin-top: 4rem;
+    margin-bottom: 5rem;
+    font-size: 1.1rem;
+    font-weight: bold;
+}
+
+.div-nums{
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    align-self: center;
+    justify-content: center;
+    margin-top: 2rem;    
+}
+
+.div-nums h4 {
+    margin: 0 10px;
+    font-weight: bold;
+    font-size: 1.3rem;
+}

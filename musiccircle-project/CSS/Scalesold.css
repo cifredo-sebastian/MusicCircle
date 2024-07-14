@@ -1,0 +1,12 @@
+.div-scales{
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    align-self: center;
+    justify-content: center;
+    margin-top: 2rem;
+}
+
+.div-scales h3 {
+    margin: 0 10px; 
+}

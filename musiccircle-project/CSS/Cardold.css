@@ -1,0 +1,38 @@
+.card {
+    width: 9rem;
+    height: 14rem;
+    max-width: 10rem;
+    display: flex;
+    flex-direction: column; 
+    flex: 0 0 calc(25% - 32px);
+    border-radius: 8px;
+    border: 1px solid #340d8f;
+    box-sizing: border-box;
+    transition: all 0.3s ease;
+    background-color: #621fff;
+}
+
+.card h5 {
+    padding: 0%;
+    margin: 1.3rem auto 1.1rem;
+    font-weight: bold;
+    font-size: 1.6rem;
+}
+
+.card h6 {
+    font-size: 1.4rem;
+    font-weight: bold;
+    padding: 0%;
+    margin:1.3rem auto .2rem;
+}
+
+.card p {
+    font-size: 1.3rem;
+    margin: auto;
+    color: #888;
+}
+
+.card:hover {
+    background-color: #4617b6;
+    transform: scale(1.05);
+}

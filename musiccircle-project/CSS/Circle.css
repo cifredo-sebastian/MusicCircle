@@ -1,0 +1,98 @@
+.section {
+    cursor: pointer;
+    display: flex;
+    /* stroke: #FF9966;
+    stroke-width: 1px; */
+    transition: transform 0.3s, fill-opacity 0.3s;
+  }
+  
+  .section:hover {
+    fill-opacity: 0.8;
+    transform: scale(1.05);
+  }
+
+  .section{
+    fill:#000000;
+  }
+
+  .label {
+    fill: #000;
+    text-anchor: middle;
+    align-items: middle;
+    font-size: 12px;
+    font-weight: bold;
+    pointer-events: none; /* Make the text non-interactive */
+    user-select: none; /* Make the text non-selectable */
+  }
+
+  .section.C{
+    fill:#3abbd1;
+    stroke: #3abbd1;
+    stroke-width: 1px;
+  }
+
+  .section.G{
+    fill:#2c8b9d;
+    stroke: #2c8b9d;
+    stroke-width: 1px;
+  }
+
+  .section.D{
+    fill:#bf8b37;
+    stroke: #bf8b37;
+    stroke-width: 1px;
+  }
+
+  .section.A{
+    fill:#e7ac44;
+    stroke: #e7ac44;
+    stroke-width: 1px;
+  }
+
+  .section.E{
+    fill:#f1cd8f;
+    stroke: #f1cd8f;
+    stroke-width: 1px;
+  }
+
+  .section.B{
+    fill:#ed8578;
+    stroke: #ed8578;
+    stroke-width: 1px;
+  }
+
+    .section.Fs{
+    fill:#e96556;
+    stroke: #e96556;
+    stroke-width: 1px;
+  }
+
+    .section.Db{
+    fill:#af4d40;
+    stroke: #af4d40;
+    stroke-width: 1px;
+  }
+
+    .section.Ab{
+    fill:#85e3be;
+    stroke: #85e3be;
+    stroke-width: 1px;
+  }
+  
+    .section.Eb{
+    fill:#34d393;
+    stroke: #34d393;
+    stroke-width: 1px;
+  }
+  
+    .section.Bb{
+    fill:#279c75;
+    stroke: #279c75;
+    stroke-width: 1px;
+  }
+  
+    .section.F{
+    fill:#81d4e2;
+    stroke: #81d4e2;
+    stroke-width: 1px;
+  }
