@@ -23,9 +23,10 @@ function Chords({currentScale, scaleNotes, note}) {
             <motion.div 
                 className="chords-div" 
                 ref={componentRef}
-                initial={{ opacity: 0, y: 20 }}
+                key={`${currentScale}-${note}`}
+                initial={{ opacity: 1, y: 0 }}
                 animate={{ opacity: 1, y: 0}}
-                transition={{ duration: 1 }}
+                transition={{ duration: 1.0 }}
                 >
                 <h3>Common Chord Progressions</h3>
                 <div className="chordCards-div">
@@ -33,13 +34,13 @@ function Chords({currentScale, scaleNotes, note}) {
                         const [chordNotes, chordNums] = getChord(nums, scaleNotes, progression);
                         return (
                                 <motion.div
-                                    key={index}
-                                    initial={{ opacity: 0, y: 20 }}
+                                    key={`${progression}-${index}`}
+                                    initial={{ opacity: 0, y: 5 }}
                                     animate={{ opacity: 1, y: 0}}
-                                    transition={{ duration: 2.5 }}
+                                    transition={{ duration: 0.5 }}
                                     className={'card-div'}
                                 >
-                                    <Card key={index} chordNotes={chordNotes} chordNums={chordNums} progression={progression} note={note}/>
+                                    <Card key={`${progression}-${index}`} chordNotes={chordNotes} chordNums={chordNums} progression={progression} note={note}/>
                                 </motion.div>
                         )
                     })}
