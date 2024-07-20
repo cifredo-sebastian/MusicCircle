@@ -1,10 +1,10 @@
 import { useState,useEffect } from 'react'
 import viteLogo from '/vite.svg'
 import './App.css'
-import Circle from '/components/Circle.jsx'
-import Note from '/components/Note.jsx'
-import LeftPanel from '../components/LeftPanel'
-import RightPanel from '../components/RightPanel'
+import Circle from '/src/components/Circle.jsx'
+import Note from '/src/components/Note.jsx'
+import LeftPanel from '/src/components/LeftPanel'
+import RightPanel from '/src/components/RightPanel'
 
 function App() {
   const [count, setCount] = useState(0)

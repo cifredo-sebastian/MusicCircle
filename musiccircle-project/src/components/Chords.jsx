@@ -1,7 +1,8 @@
 import React from "react"
-import romanNumeralsData from '../src/data/romanNumeralsData';
-import chordsData from "../src/data/chordsData";
-import Card from '/components/Card'
+import romanNumeralsData from '/src/data/romanNumeralsData';
+import chordsData from "/src/data/chordsData";
+import Card from '/src/components/Card'
+import { motion } from 'framer-motion';
 
 
 
@@ -11,43 +12,39 @@ function Chords({currentScale, scaleNotes, note}) {
 
     const [chordProgessions,setChordProgressions] = React.useState(chordsData)
     const [cardList,setCardList] = React.useState([])
-    const [isVisible, setIsVisible] = React.useState(false)
     const componentRef = React.useRef(null)
 
     function getChord(romans,notes,progression){
         return [progression.map(index => notes[index-1]), progression.map(index => romans[index-1])]
     }
-
-    // Chord Cards dissappear and reappear.
-    React.useEffect(() => {
-        console.log("Effect ran")
-        if (isVisible) { setIsVisible(false) }
-
-        setTimeout(()  => {
-            setIsVisible(true)
-            if (isVisible  && componentRef.current){
-                //componentRef.current.scrollIntoView({ behavior: 'smooth' })
-            }
-        },500)
-
-    },[currentScale,note])
-
     
     if(nums){
         return(
-            <div className="chords-div"  ref={componentRef}>
+            <motion.div 
+                className="chords-div" 
+                ref={componentRef}
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0}}
+                transition={{ duration: 1 }}
+                >
                 <h3>Common Chord Progressions</h3>
                 <div className="chordCards-div">
                     {chordProgessions.map((progression,index)=>{
                         const [chordNotes, chordNums] = getChord(nums, scaleNotes, progression);
                         return (
-                            <div className={isVisible ? 'animatedcard-div' : 'card-div'}>
-                                <Card key={index} chordNotes={chordNotes} chordNums={chordNums} progression={progression} note={note}/>
-                            </div>
+                                <motion.div
+                                    key={index}
+                                    initial={{ opacity: 0, y: 20 }}
+                                    animate={{ opacity: 1, y: 0}}
+                                    transition={{ duration: 2.5 }}
+                                    className={'card-div'}
+                                >
+                                    <Card key={index} chordNotes={chordNotes} chordNums={chordNums} progression={progression} note={note}/>
+                                </motion.div>
                         )
                     })}
                 </div>
-            </div>
+            </motion.div>
             
         )
     }

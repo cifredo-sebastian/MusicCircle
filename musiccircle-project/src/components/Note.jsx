@@ -1,8 +1,9 @@
 import React from 'react';
 import scalesData from "/src/data/scalesData.js";
-import Scale from '/components/Scale'
-import RomanNumeral from '/components/RomanNumeral'
-import Chords from '/components/Chords';
+import Scale from '/src/components/Scale'
+import RomanNumeral from '/src/components/RomanNumeral'
+import Chords from '/src/components/Chords';
+import {motion} from 'framer-motion';
 
 function Note ({note,setNote}) {
     if (!note) return null;
@@ -36,11 +37,11 @@ function Note ({note,setNote}) {
     },[scalesArray])
 
     //Appearance
-    React.useEffect(() => {
-        if (isVisible  && componentRefNote.current){
-            setTimeout(() => setIsAppearing(true), 10) // Allow time for the DOM to render the component
-        }
-    }, [isVisible])
+    // React.useEffect(() => {
+    //     if (isVisible  && componentRefNote.current){
+    //         setTimeout(() => setIsAppearing(true), 10)
+    //     }
+    // }, [isVisible])
 
     //Change in Scale
     React.useEffect(() => {
@@ -58,8 +59,14 @@ function Note ({note,setNote}) {
 
 
     return (
-        <div className={`notePage${isAppearing ? '-appear' : ''}`} ref={componentRefNote}>
-            <div>
+        <motion.div 
+            className='notePage' 
+            ref={componentRefNote}
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0}}
+            transition={{ duration: 0.5 }}
+        >
+            <div className='note-title'>
                 <h1>{note}</h1>
             </div>
             <div>
@@ -79,8 +86,7 @@ function Note ({note,setNote}) {
                 </div>
                 
             </div>
-            
-        </div>
+        </motion.div>
     )
 }
 

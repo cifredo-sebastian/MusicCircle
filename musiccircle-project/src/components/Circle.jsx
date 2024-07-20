@@ -1,5 +1,4 @@
 import React from 'react';
-import '/CSS/Circle.css'
 
 function Circle (props) {
     const sections = [
