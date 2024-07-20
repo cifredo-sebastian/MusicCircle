@@ -1,5 +1,5 @@
 import React from 'react'
-import romanNumeralsData from '../src/data/romanNumeralsData';
+import romanNumeralsData from '../data/romanNumeralsData';
 
 // AKA Diatonic Chord Progressions
 

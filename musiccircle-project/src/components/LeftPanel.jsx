@@ -1,26 +1,28 @@
+// LeftPanel.js
 import React from 'react';
-import notesData from '../src/data/notesData';
+import notesData from '../data/notesData';
 
-function RightPanel ({note, setNote}) {
-    const [notesArray,setNotesArray] = React.useState(notesData)
-    const [nextNote,setNextNote] = React.useState(note)
+function LeftPanel ({note,setNote}) {
+    const [notesArray,setNotesArray] = React.useState(notesData);
+    const [prevNote,setPrevNote] = React.useState(note);
     const [isFixed, setIsFixed] = React.useState(false);
 
+
     React.useEffect(() => {
-        console.log("Right Panel Effect Reached")
+        console.log("Left Panel Effect Reached")
         const index = notesArray.findIndex(n => n === note)
-        if (index < 11) {
-            setNextNote(notesArray[index+1]);
+        if (index > 0) {
+            setPrevNote(notesArray[index - 1]);
         }
         else{
-            setNextNote(notesArray[0])
+            setPrevNote(notesArray[11])
         }
         
     },[note])
 
     function noteChange() {
-        // console.log(`Right Panel Button Clicked prevnote: ${nextNote}`)
-        setNote(nextNote)
+        // console.log(`Left Panel Button Clicked prevnote: ${prevNote}`)
+        setNote(prevNote)
     }
 
     const handleScroll = () => {
@@ -42,12 +44,11 @@ function RightPanel ({note, setNote}) {
     }, []);
 
     return (
-        <div className={`side-panel right-panel ${isFixed ? 'fixed' : 'absolute'}`}>
-            {/* Add your navigation items here */}
+        <div className={`side-panel left-panel ${isFixed ? 'fixed' : 'absolute'}`}>
             <div className='panel-content' onClick={noteChange}>
-                <h1>{nextNote}</h1>
-                <div className="arrow right-arrow">
-                    <i class="fa fa-angle-right" aria-hidden="true"></i> {/* Right arrow */}
+                <h1>{prevNote}</h1>
+                <div className="arrow left-arrow">
+                    <i class="fa fa-angle-left" aria-hidden="true"></i> {/* Left arrow */}
                 </div> 
             </div>
             
@@ -55,4 +56,4 @@ function RightPanel ({note, setNote}) {
     );
 };
 
-export default RightPanel;
+export default LeftPanel;
