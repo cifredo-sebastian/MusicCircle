@@ -11,7 +11,7 @@ function Chords({currentScale, scaleNotes, note}) {
     const nums = romanNumeralsData[currentScale]
 
     const [chordProgessions,setChordProgressions] = React.useState(chordsData)
-    const [cardList,setCardList] = React.useState([])
+    // const [cardList,setCardList] = React.useState([])
     const componentRef = React.useRef(null)
 
     function getChord(romans,notes,progression){

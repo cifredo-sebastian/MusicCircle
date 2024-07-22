@@ -36,13 +36,6 @@ function Note ({note,setNote}) {
         }
     },[scalesArray])
 
-    //Appearance
-    // React.useEffect(() => {
-    //     if (isVisible  && componentRefNote.current){
-    //         setTimeout(() => setIsAppearing(true), 10)
-    //     }
-    // }, [isVisible])
-
     //Change in Scale
     React.useEffect(() => {
         if (scalesArray){
